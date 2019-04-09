@@ -1,6 +1,6 @@
 {
-  "name": "abtercms/website",
-  "description": "Website module for AbterPHP",
+  "name": "abtercms/propeller-admin",
+  "description": "Propeller design for the Admin module of AbterPHP",
   "authors": [
     {
       "name": "Peter Aba",

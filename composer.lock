@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5edfba95cf760d75c4834f5c7420846b",
+    "content-hash": "480bba0e377db20607565051a99be710",
     "packages": [
         {
             "name": "abtercms/admin",
