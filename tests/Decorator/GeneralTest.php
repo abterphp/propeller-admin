@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 
 class GeneralTest extends TestCase
 {
-    /** @var General */
+    /** @var General - System Under Test */
     protected $sut;
 
     public function setUp()
