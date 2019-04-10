@@ -1,5 +1,5 @@
 {
-  "name": "abtercms/propeller-admin",
+  "name": "abterphp/propeller-admin",
   "description": "Propeller design for the Admin module of AbterPHP",
   "authors": [
     {
@@ -21,7 +21,7 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "require": {
-    "abtercms/admin": "dev-master"
+    "abterphp/admin": "dev-master"
   },
   "require-dev": {
     "phpunit/phpunit": "^6.1",
