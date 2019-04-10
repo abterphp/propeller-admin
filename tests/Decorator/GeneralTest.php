@@ -63,4 +63,11 @@ class GeneralTest extends TestCase
         $this->assertTrue($component3->hasAttribute(Html5::ATTR_CLASS));
         $this->assertContains(General::BUTTON_CLASS, $component3->getAttribute(Html5::ATTR_CLASS));
     }
+
+    public function testDecorateButtonsWithDoubleInit()
+    {
+        $this->sut->init();
+
+        $this->testDecorateButtons();
+    }
 }

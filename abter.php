@@ -3,7 +3,8 @@
 use AbterPhp\Admin\Constant\Event as AdminEvent;
 use AbterPhp\Framework\Constant\Event;
 use AbterPhp\Framework\Constant\Module;
-use AbterPhp\PropellerAdmin;
+use AbterPhp\PropellerAdmin\Bootstrappers;
+use AbterPhp\PropellerAdmin\Events;
 
 return [
     Module::IDENTIFIER         => 'AbterPhp\PropellerAdmin',
