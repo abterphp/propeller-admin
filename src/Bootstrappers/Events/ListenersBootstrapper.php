@@ -9,19 +9,35 @@ use AbterPhp\PropellerAdmin\Events\Listeners\AdminDecorator;
 use AbterPhp\PropellerAdmin\Events\Listeners\LoginDecorator;
 use Opulence\Framework\Configuration\Config;
 use Opulence\Ioc\Bootstrappers\Bootstrapper;
+use Opulence\Ioc\Bootstrappers\ILazyBootstrapper;
 use Opulence\Ioc\IContainer;
 
-class ListenersBootstrapper extends Bootstrapper
+class ListenersBootstrapper extends Bootstrapper implements ILazyBootstrapper
 {
+    const MODULE_IDENTIFIER = 'AbterPhp\\PropellerAdmin';
+
+    const PROPELLER_PATH = 'propeller/';
+
+    /**
+     * @return array
+     */
+    public function getBindings(): array
+    {
+        return [
+            AdminDecorator::class,
+            LoginDecorator::class,
+        ];
+    }
+
     /**
      * @inheritdoc
      */
     public function registerBindings(IContainer $container)
     {
-        $resourceDir = Config::get('paths', 'resources.propeller');
+        $resourceDir = $this->getResourceDir();
 
-        $header = file_get_contents($resourceDir . '/header.html');
-        $footer = file_get_contents($resourceDir . '/footer.html');
+        $header = file_get_contents($resourceDir . 'header.html');
+        $footer = file_get_contents($resourceDir . 'footer.html');
 
         /** @var AssetManager $assetManager */
         $assetManager = $container->resolve(AssetManager::class);
@@ -31,5 +47,23 @@ class ListenersBootstrapper extends Bootstrapper
 
         $container->bindInstance(AdminDecorator::class, $adminDecorator);
         $container->bindInstance(LoginDecorator::class, $loginDecorator);
+    }
+
+    /**
+     * @return string
+     */
+    protected function getResourceDir(): string
+    {
+        global $abterModuleManager;
+
+        foreach ($abterModuleManager->getResourcePaths() as $id => $path) {
+            if ($id !== static::MODULE_IDENTIFIER) {
+                continue;
+            }
+
+            return sprintf('%s/%s', $path, static::PROPELLER_PATH);
+        }
+
+        return '';
     }
 }

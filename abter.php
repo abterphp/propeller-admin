@@ -36,4 +36,5 @@ return [
             sprintf('%s@handle', Events\Listeners\LoginDecorator::class),
         ],
     ],
+    Module::RESOURCE_PATH    => realpath(__DIR__ . '/resources'),
 ];
