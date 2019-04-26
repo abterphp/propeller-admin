@@ -3,6 +3,7 @@
 use AbterPhp\Admin\Constant\Event as AdminEvent;
 use AbterPhp\Framework\Constant\Event;
 use AbterPhp\Framework\Constant\Module;
+use AbterPhp\Framework\Constant\Priorities;
 use AbterPhp\PropellerAdmin\Bootstrappers;
 use AbterPhp\PropellerAdmin\Events;
 
@@ -17,24 +18,24 @@ return [
     Module::EVENTS             => [
         Event::NAVIGATION_READY => [
             /** @see \AbterPhp\PropellerAdmin\Events\Listeners\NavigationBuilder::handle */
-            sprintf('%s@handle', Events\Listeners\NavigationBuilder::class),
+            Priorities::EXTREME_LOW => [sprintf('%s@handle', Events\Listeners\NavigationBuilder::class)],
         ],
         Event::FORM_READY       => [
             /** @see \AbterPhp\PropellerAdmin\Events\Listeners\FormDecorator::handle */
-            sprintf('%s@handle', Events\Listeners\FormDecorator::class),
+            Priorities::EXTREME_LOW => [sprintf('%s@handle', Events\Listeners\FormDecorator::class)],
         ],
         Event::GRID_READY       => [
             /** @see \AbterPhp\PropellerAdmin\Events\Listeners\GridDecorator::handle */
-            sprintf('%s@handle', Events\Listeners\GridDecorator::class),
+            Priorities::EXTREME_LOW => [sprintf('%s@handle', Events\Listeners\GridDecorator::class)],
         ],
         AdminEvent::ADMIN_READY => [
             /** @see \AbterPhp\PropellerAdmin\Events\Listeners\AdminDecorator::handle */
-            sprintf('%s@handle', Events\Listeners\AdminDecorator::class),
+            Priorities::EXTREME_LOW => [sprintf('%s@handle', Events\Listeners\AdminDecorator::class)],
         ],
         AdminEvent::LOGIN_READY => [
             /** @see \AbterPhp\PropellerAdmin\Events\Listeners\LoginDecorator::handle */
-            sprintf('%s@handle', Events\Listeners\LoginDecorator::class),
+            Priorities::EXTREME_LOW => [sprintf('%s@handle', Events\Listeners\LoginDecorator::class)],
         ],
     ],
-    Module::RESOURCE_PATH    => realpath(__DIR__ . '/resources'),
+    Module::RESOURCE_PATH      => realpath(__DIR__ . '/resources'),
 ];

@@ -63,7 +63,7 @@ class PrimaryTest extends TestCase
 
     public function testDecorateEmptyPrimaryNavigation()
     {
-        $navigation = new Navigation('', [Navigation::INTENT_PRIMARY]);
+        $navigation = new Navigation([Navigation::INTENT_PRIMARY]);
 
         $this->sut->decorate([$navigation]);
 
@@ -74,7 +74,7 @@ class PrimaryTest extends TestCase
     {
         $item = new Item();
 
-        $navigation = new Navigation('', [Navigation::INTENT_PRIMARY]);
+        $navigation = new Navigation([Navigation::INTENT_PRIMARY]);
         $navigation->addItem($item);
 
         $this->sut->decorate([$navigation]);
@@ -93,7 +93,7 @@ class PrimaryTest extends TestCase
 
         $item = new Item(new UserBlock($sessionMock), [UserBlock::class]);
 
-        $navigation = new Navigation('', [Navigation::INTENT_PRIMARY]);
+        $navigation = new Navigation([Navigation::INTENT_PRIMARY]);
         $navigation->addItem($item);
 
         $this->sut->decorate([$navigation]);
@@ -106,7 +106,7 @@ class PrimaryTest extends TestCase
         $dropdown = new Dropdown();
         $item     = new Item($dropdown, [UserBlock::class]);
 
-        $navigation = new Navigation('', [Navigation::INTENT_PRIMARY]);
+        $navigation = new Navigation([Navigation::INTENT_PRIMARY]);
         $navigation->addItem($item);
 
         $this->sut->decorate([$navigation]);
@@ -123,7 +123,7 @@ class PrimaryTest extends TestCase
 
         $item = new Item($dropdown, [UserBlock::class]);
 
-        $navigation = new Navigation('', [Navigation::INTENT_PRIMARY]);
+        $navigation = new Navigation([Navigation::INTENT_PRIMARY]);
         $navigation->addItem($item);
 
         $this->sut->decorate([$navigation]);
@@ -140,7 +140,7 @@ class PrimaryTest extends TestCase
         $collection[] = new Button('C', [], [Html5::ATTR_CLASS => 'btn btn-2']);
         $button       = new Button('D', [], [Html5::ATTR_CLASS => 'btn btn-3']);
 
-        $navigation = new Navigation('', [Navigation::INTENT_PRIMARY]);
+        $navigation = new Navigation([Navigation::INTENT_PRIMARY]);
         $navigation->addItem(new Item($collection));
         $navigation->addItem(new Item($button));
 

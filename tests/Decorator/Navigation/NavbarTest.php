@@ -55,7 +55,7 @@ class NavbarTest extends TestCase
 
     public function testDecorateNavbar()
     {
-        $navbar = new Navigation('', [Navigation::INTENT_NAVBAR]);
+        $navbar = new Navigation([Navigation::INTENT_NAVBAR]);
 
         $this->sut->decorate([$navbar]);
 

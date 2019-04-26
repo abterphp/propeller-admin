@@ -36,9 +36,10 @@ class Primary extends Decorator
 
     const USER_BLOCK_MEDIA_RIGHT_ICON_CLASS = 'dic-more-vert dic';
 
-    const DROPDOWN_WRAPPER_CLASS = 'pmd-dropdown-menu-container';
-    const DROPDOWN_PREFIX_CLASS  = 'pmd-dropdown-menu-bg';
-    const DROPDOWN_CLASS         = 'dropdown-menu';
+    const DROPDOWN_WRAPPER_CLASS   = 'pmd-dropdown-menu-container';
+    const DROPDOWN_PREFIX_CLASS    = 'pmd-dropdown-menu-bg';
+    const DROPDOWN_CLASS           = 'dropdown-menu';
+    const DROPDOWN_CONTAINER_CLASS = 'dropdown pmd-dropdown openable nav-open';
 
     const HEADER_WEIGHT = -100000;
 
@@ -89,8 +90,10 @@ class Primary extends Decorator
         ];
         $navigation->setWrapper(new Component(null, [], $wrapperAttribs, Html5::TAG_ASIDE));
 
-        $this->handleButtons(...$navigation->getNodes());
-        $this->handleUserGroup(...$navigation->getNodes());
+        $nodes = $navigation->getNodes();
+
+        $this->handleButtons(...$nodes);
+        $this->handleItems(...$nodes);
     }
 
     /**
@@ -109,21 +112,47 @@ class Primary extends Decorator
     /**
      * @param Item ...$items
      */
-    protected function handleUserGroup(Item ...$items)
+    protected function handleItems(Item ...$items)
     {
         foreach ($items as $item) {
-            if (!$item->hasIntent(UserBlock::class)) {
-                continue;
+            if ($item->hasIntent(UserBlock::class)) {
+                $this->decorateUserBlockContainer($item);
+            } else {
+                $this->decorateGeneralContainer($item);
             }
+        }
+    }
 
-            $item->appendToClass(static::USER_BLOCK_ITEM_CLASS);
+    /**
+     * @param Item $item
+     */
+    protected function decorateGeneralContainer(Item $item)
+    {
+        if (!$item->hasIntent(Item::INTENT_DROPDOWN)) {
+            return;
+        }
 
-            foreach ($item as $subItem) {
-                if ($subItem instanceof UserBlock) {
-                    $this->decorateUserBlock($subItem);
-                } elseif ($subItem instanceof Dropdown) {
-                    $this->decorateDropdown($subItem);
-                }
+        $item->appendToClass(static::DROPDOWN_CONTAINER_CLASS);
+
+        foreach ($item as $subItem) {
+            if ($subItem instanceof Dropdown) {
+                $this->decorateDropdown($subItem);
+            }
+        }
+    }
+
+    /**
+     * @param Item $item
+     */
+    protected function decorateUserBlockContainer(Item $item)
+    {
+        $item->appendToClass(static::USER_BLOCK_ITEM_CLASS);
+
+        foreach ($item as $subItem) {
+            if ($subItem instanceof UserBlock) {
+                $this->decorateUserBlock($subItem);
+            } elseif ($subItem instanceof Dropdown) {
+                $this->decorateDropdown($subItem);
             }
         }
     }
