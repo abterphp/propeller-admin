@@ -38,4 +38,8 @@ return [
         ],
     ],
     Module::RESOURCE_PATH      => realpath(__DIR__ . '/resources'),
+    Module::ASSETS_PATHS       => [
+        'fonts'        => realpath(__DIR__ . '/resources/rawassets/vendor/propeller/fonts'),
+        'admin-assets' => realpath(__DIR__ . '/resources/rawassets'),
+    ],
 ];
