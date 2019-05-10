@@ -6,8 +6,10 @@ namespace AbterPhp\PropellerAdmin\Decorator;
 
 use AbterPhp\Framework\Decorator\Decorator;
 use AbterPhp\Framework\Decorator\Rule;
+use AbterPhp\Framework\Grid\Cell\Sortable;
 use AbterPhp\Framework\Grid\Filter\Filter;
 use AbterPhp\Framework\Grid\Pagination\Pagination;
+use AbterPhp\Framework\Html\Component\Button;
 
 class Grid extends Decorator
 {
@@ -25,6 +27,11 @@ class Grid extends Decorator
 
     const HELP_BLOCK_CLASS = 'help-block';
 
+    const CARET_CLASS = 'caret';
+    const CARET_ACTIVE_CLASS = 'caret-active';
+    const CARET_DOWN_CLASS = 'caret-down';
+    const CARET_UP_CLASS = 'caret-up';
+
     /**
      * @return $this
      */
@@ -33,6 +40,10 @@ class Grid extends Decorator
         $this->rules[] = new Rule([], Filter::class, [static::FILTER_INPUT_CLASS], [], [$this, 'buildFilter']);
         $this->rules[] = new Rule([], Pagination::class, [static::PAGINATION_CLASS], [], [$this, 'decoratePagination']);
         $this->rules[] = new Rule([Filter::INTENT_HELP_BLOCK], null, [static::HELP_BLOCK_CLASS]);
+        $this->rules[] = new Rule([Sortable::BTN_INTENT_SHOARTING], null, [static::CARET_CLASS]);
+        $this->rules[] = new Rule([Sortable::BTN_INTENT_CARET_ACTIVE], null, [static::CARET_ACTIVE_CLASS]);
+        $this->rules[] = new Rule([Sortable::BTN_INTENT_CARET_DOWN], null, [static::CARET_DOWN_CLASS]);
+        $this->rules[] = new Rule([Sortable::BTN_INTENT_CARET_UP], null, [static::CARET_UP_CLASS]);
 
         return $this;
     }
