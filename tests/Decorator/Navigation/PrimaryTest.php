@@ -134,6 +134,7 @@ class PrimaryTest extends TestCase
 
     public function testDecoratePrimaryNavigationRemovesBtnClasses()
     {
+        /** @var Button[] $collection */
         $collection   = new Collection();
         $collection[] = new Button('A', [], [Html5::ATTR_CLASS => 'btn']);
         $collection[] = new Button('B', [], [Html5::ATTR_CLASS => 'btn btn-1']);

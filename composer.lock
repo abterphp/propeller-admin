@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/abterphp/admin.git",
-                "reference": "2c4864e5d2b5e6f8ee0e897a5a8ec4cc841fabda"
+                "reference": "ccdc63843cf08a4d2813d96cc57ec852a83ec4bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/abterphp/admin/zipball/2c4864e5d2b5e6f8ee0e897a5a8ec4cc841fabda",
-                "reference": "2c4864e5d2b5e6f8ee0e897a5a8ec4cc841fabda",
+                "url": "https://api.github.com/repos/abterphp/admin/zipball/ccdc63843cf08a4d2813d96cc57ec852a83ec4bc",
+                "reference": "ccdc63843cf08a4d2813d96cc57ec852a83ec4bc",
                 "shasum": ""
             },
             "require": {
@@ -53,7 +53,7 @@
                 }
             ],
             "description": "Admin module for AbterPHP",
-            "time": "2019-05-27T00:57:50+00:00"
+            "time": "2019-05-27T09:46:54+00:00"
         },
         {
             "name": "abterphp/framework",
@@ -61,12 +61,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/abterphp/framework.git",
-                "reference": "e35e92e87a49e995d5a928ecf3778161ffe912d1"
+                "reference": "04f164ff13764426972bf9900e7d65b53f54fed8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/abterphp/framework/zipball/e35e92e87a49e995d5a928ecf3778161ffe912d1",
-                "reference": "e35e92e87a49e995d5a928ecf3778161ffe912d1",
+                "url": "https://api.github.com/repos/abterphp/framework/zipball/04f164ff13764426972bf9900e7d65b53f54fed8",
+                "reference": "04f164ff13764426972bf9900e7d65b53f54fed8",
                 "shasum": ""
             },
             "require": {
@@ -121,7 +121,7 @@
                 }
             ],
             "description": "Foundations for AbterPHP",
-            "time": "2019-05-27T00:11:05+00:00"
+            "time": "2019-05-27T09:45:58+00:00"
         },
         {
             "name": "bjeavons/zxcvbn-php",
