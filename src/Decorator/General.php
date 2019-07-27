@@ -24,7 +24,6 @@ class General extends Decorator
         Button::INTENT_LINK      => ['btn-link'],
         Button::INTENT_SMALL     => ['btn-sm'],
         Button::INTENT_LARGE     => ['btn-lg'],
-        Button::INTENT_HIDDEN    => ['btn-secondary'],
         Button::INTENT_DEFAULT   => ['btn-default'],
     ];
 
