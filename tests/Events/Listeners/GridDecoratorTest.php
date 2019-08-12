@@ -27,12 +27,12 @@ class GridDecoratorTest extends TestCase
     {
         $this->gridDecoratorMock = $this->getMockBuilder(GridDecorator::class)
             ->disableOriginalConstructor()
-            ->setMethods(['init', 'decorate'])
+            ->onlyMethods(['init', 'decorate'])
             ->getMock();
 
         $this->generalDecoratorMock = $this->getMockBuilder(GeneralDecorator::class)
             ->disableOriginalConstructor()
-            ->setMethods(['init', 'decorate'])
+            ->onlyMethods(['init', 'decorate'])
             ->getMock();
 
         $this->gridDecoratorMock->expects($this->any())->method('init')->willReturnSelf();
@@ -48,7 +48,7 @@ class GridDecoratorTest extends TestCase
         /** @var Grid|MockObject $gridMock */
         $gridMock = $this->getMockBuilder(Grid::class)
             ->disableOriginalConstructor()
-            ->setMethods(['getExtendedDescendantNodes'])
+            ->onlyMethods(['getExtendedDescendantNodes'])
             ->getMock();
 
         $gridMock->expects($this->any())->method('getExtendedDescendantNodes')->willReturn([]);

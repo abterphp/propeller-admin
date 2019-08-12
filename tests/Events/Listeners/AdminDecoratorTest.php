@@ -25,7 +25,7 @@ class AdminDecoratorTest extends TestCase
     {
         $this->assetManagerMock = $this->getMockBuilder(AssetManager::class)
             ->disableOriginalConstructor()
-            ->setMethods(['addCss', 'addJs'])
+            ->onlyMethods(['addCss', 'addJs'])
             ->getMock();
 
         $this->sut = new AdminDecorator($this->assetManagerMock, static::HEADER, static::FOOTER);
@@ -38,7 +38,7 @@ class AdminDecoratorTest extends TestCase
         /** @var View|MockObject $viewMock */
         $viewMock = $this->getMockBuilder(View::class)
             ->disableOriginalConstructor()
-            ->setMethods(['hasVar', 'getVar', 'setVar'])
+            ->onlyMethods(['hasVar', 'getVar', 'setVar'])
             ->getMock();
 
         $viewMock->expects($this->atLeastOnce())->method('setVar');

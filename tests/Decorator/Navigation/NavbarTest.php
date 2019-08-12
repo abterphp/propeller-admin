@@ -23,7 +23,7 @@ class NavbarTest extends TestCase
     {
         $this->urlGeneratorMock = $this->getMockBuilder(UrlGenerator::class)
             ->disableOriginalConstructor()
-            ->setMethods(['createFromName'])
+            ->onlyMethods(['createFromName'])
             ->getMock();
 
         $this->sut = (new Navbar($this->urlGeneratorMock))->init();

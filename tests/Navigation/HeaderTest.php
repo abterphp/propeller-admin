@@ -21,7 +21,7 @@ class HeaderTest extends TestCase
     {
         $this->brandBtnMock = $this->getMockBuilder(Button::class)
             ->disableOriginalConstructor()
-            ->setMethods(['__toString'])
+            ->onlyMethods(['__toString'])
             ->getMock();
 
         $this->sut = new Header($this->brandBtnMock);
@@ -46,7 +46,7 @@ class HeaderTest extends TestCase
         /** @var Button|MockObject $hamburgerBtnMock */
         $hamburgerBtnMock = $this->getMockBuilder(Button::class)
             ->disableOriginalConstructor()
-            ->setMethods(['__toString'])
+            ->onlyMethods(['__toString'])
             ->getMock();
 
         $this->sut = new Header($this->brandBtnMock, $hamburgerBtnMock);
@@ -62,12 +62,12 @@ class HeaderTest extends TestCase
         /** @var Button|MockObject $hamburgerBtnMock */
         $hamburgerBtnMock = $this->getMockBuilder(Button::class)
             ->disableOriginalConstructor()
-            ->setMethods(['__toString'])
+            ->onlyMethods(['__toString'])
             ->getMock();
 
         $extraComponent = $this->getMockBuilder(Component::class)
             ->disableOriginalConstructor()
-            ->setMethods(['__toString'])
+            ->onlyMethods(['__toString'])
             ->getMock();
 
         $this->sut = new Header($this->brandBtnMock, $hamburgerBtnMock);

@@ -31,17 +31,17 @@ class NavigationBuilderTest extends TestCase
     {
         $this->primaryDecoratorMock = $this->getMockBuilder(PrimaryDecorator::class)
             ->disableOriginalConstructor()
-            ->setMethods(['init', 'decorate'])
+            ->onlyMethods(['init', 'decorate'])
             ->getMock();
 
         $this->navbarDecoratorMock = $this->getMockBuilder(NavbarDecorator::class)
             ->disableOriginalConstructor()
-            ->setMethods(['init', 'decorate'])
+            ->onlyMethods(['init', 'decorate'])
             ->getMock();
 
         $this->generalDecoratorMock = $this->getMockBuilder(GeneralDecorator::class)
             ->disableOriginalConstructor()
-            ->setMethods(['init', 'decorate'])
+            ->onlyMethods(['init', 'decorate'])
             ->getMock();
 
         $this->primaryDecoratorMock->expects($this->any())->method('init')->willReturnSelf();
@@ -58,7 +58,7 @@ class NavigationBuilderTest extends TestCase
         /** @var Navigation|MockObject $navigationMock */
         $navigationMock = $this->getMockBuilder(Navigation::class)
             ->disableOriginalConstructor()
-            ->setMethods(['getExtendedDescendantNodes', 'hasIntent'])
+            ->onlyMethods(['getExtendedDescendantNodes', 'hasIntent'])
             ->getMock();
 
         $navigationMock->expects($this->any())->method('getExtendedDescendantNodes')->willReturn([]);
@@ -87,7 +87,7 @@ class NavigationBuilderTest extends TestCase
         /** @var Navigation|MockObject $navigationMock */
         $navigationMock = $this->getMockBuilder(Navigation::class)
             ->disableOriginalConstructor()
-            ->setMethods(['getExtendedDescendantNodes', 'hasIntent'])
+            ->onlyMethods(['getExtendedDescendantNodes', 'hasIntent'])
             ->getMock();
 
         $navigationMock
@@ -114,7 +114,7 @@ class NavigationBuilderTest extends TestCase
         /** @var Navigation|MockObject $navigationMock */
         $navigationMock = $this->getMockBuilder(Navigation::class)
             ->disableOriginalConstructor()
-            ->setMethods(['getExtendedDescendantNodes', 'hasIntent'])
+            ->onlyMethods(['getExtendedDescendantNodes', 'hasIntent'])
             ->getMock();
 
         $navigationMock->expects($this->any())->method('getExtendedDescendantNodes')->willReturn([]);

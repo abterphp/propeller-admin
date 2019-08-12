@@ -27,12 +27,12 @@ class FormDecoratorTest extends TestCase
     {
         $this->formDecoratorMock = $this->getMockBuilder(FormDecorator::class)
             ->disableOriginalConstructor()
-            ->setMethods(['init', 'decorate'])
+            ->onlyMethods(['init', 'decorate'])
             ->getMock();
 
         $this->generalDecoratorMock = $this->getMockBuilder(GeneralDecorator::class)
             ->disableOriginalConstructor()
-            ->setMethods(['init', 'decorate'])
+            ->onlyMethods(['init', 'decorate'])
             ->getMock();
 
         $this->formDecoratorMock->expects($this->any())->method('init')->willReturnSelf();
@@ -48,7 +48,7 @@ class FormDecoratorTest extends TestCase
         /** @var Form|MockObject $formMock */
         $formMock = $this->getMockBuilder(Form::class)
             ->disableOriginalConstructor()
-            ->setMethods(['getExtendedDescendantNodes'])
+            ->onlyMethods(['getExtendedDescendantNodes'])
             ->getMock();
 
         $formMock->expects($this->any())->method('getExtendedDescendantNodes')->willReturn([]);
