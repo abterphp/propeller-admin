@@ -9,6 +9,7 @@ use AbterPhp\Framework\Decorator\Decorator;
 use AbterPhp\Framework\Decorator\Rule;
 use AbterPhp\Framework\Html\Component;
 use AbterPhp\Framework\Html\ICollection;
+use AbterPhp\Framework\Html\INode;
 use AbterPhp\Framework\Html\ITag;
 use AbterPhp\Framework\Html\Tag;
 use AbterPhp\Framework\Navigation\Dropdown;
@@ -97,11 +98,15 @@ class Primary extends Decorator
     }
 
     /**
-     * @param Item ...$items
+     * @param INode ...$items
      */
-    protected function handleButtons(Item ...$items)
+    protected function handleButtons(INode ...$items)
     {
         foreach ($items as $item) {
+            if (!($item instanceof Item)) {
+                continue;
+            }
+
             /** @var Component\Button $button */
             foreach ($item->collect(Component\Button::class) as $button) {
                 $button->unsetAttributeValue(Html5::ATTR_CLASS, 'btn');
@@ -110,11 +115,15 @@ class Primary extends Decorator
     }
 
     /**
-     * @param Item ...$items
+     * @param INode ...$items
      */
-    protected function handleItems(Item ...$items)
+    protected function handleItems(INode ...$items)
     {
         foreach ($items as $item) {
+            if (!($item instanceof Item)) {
+                continue;
+            }
+
             if ($item->hasIntent(UserBlock::class)) {
                 $this->decorateUserBlockContainer($item);
             } else {

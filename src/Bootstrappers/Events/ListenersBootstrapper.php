@@ -7,7 +7,6 @@ namespace AbterPhp\PropellerAdmin\Bootstrappers\Events;
 use AbterPhp\Framework\Assets\AssetManager;
 use AbterPhp\PropellerAdmin\Events\Listeners\AdminDecorator;
 use AbterPhp\PropellerAdmin\Events\Listeners\LoginDecorator;
-use Opulence\Framework\Configuration\Config;
 use Opulence\Ioc\Bootstrappers\Bootstrapper;
 use Opulence\Ioc\Bootstrappers\ILazyBootstrapper;
 use Opulence\Ioc\IContainer;

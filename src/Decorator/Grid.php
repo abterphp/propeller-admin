@@ -9,7 +9,6 @@ use AbterPhp\Framework\Decorator\Rule;
 use AbterPhp\Framework\Grid\Cell\Sortable;
 use AbterPhp\Framework\Grid\Filter\Filter;
 use AbterPhp\Framework\Grid\Pagination\Pagination;
-use AbterPhp\Framework\Html\Component\Button;
 
 class Grid extends Decorator
 {
@@ -61,7 +60,7 @@ class Grid extends Decorator
     }
 
     /**
-     * @param Filter $input
+     * @param Pagination $pagination
      */
     public function decoratePagination(Pagination $pagination)
     {
