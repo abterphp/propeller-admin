@@ -19,7 +19,7 @@ class NavbarTest extends TestCase
     /** @var UrlGenerator|MockObject */
     protected $urlGeneratorMock;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->urlGeneratorMock = $this->getMockBuilder(UrlGenerator::class)
             ->disableOriginalConstructor()
@@ -59,7 +59,7 @@ class NavbarTest extends TestCase
 
         $this->sut->decorate([$navbar]);
 
-        $this->assertContains(Navbar::NAVBAR_CLASS, $navbar->getAttribute(Html5::ATTR_CLASS));
+        $this->assertStringContainsString(Navbar::NAVBAR_CLASS, $navbar->getAttribute(Html5::ATTR_CLASS));
         $this->assertCount(1, $navbar->getNodes());
     }
 }

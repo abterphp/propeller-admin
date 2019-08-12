@@ -27,7 +27,7 @@ class NavigationBuilderTest extends TestCase
     /** @var GeneralDecorator|MockObject */
     protected $generalDecoratorMock;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->primaryDecoratorMock = $this->getMockBuilder(PrimaryDecorator::class)
             ->disableOriginalConstructor()

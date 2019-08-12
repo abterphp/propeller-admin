@@ -27,7 +27,7 @@ class PrimaryTest extends TestCase
     /** @var UrlGenerator|MockObject */
     protected $urlGeneratorMock;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->urlGeneratorMock = $this->getMockBuilder(UrlGenerator::class)
             ->disableOriginalConstructor()
@@ -67,7 +67,7 @@ class PrimaryTest extends TestCase
 
         $this->sut->decorate([$navigation]);
 
-        $this->assertContains(Primary::PRIMARY_CLASS, $navigation->getAttribute(Html5::ATTR_CLASS));
+        $this->assertStringContainsString(Primary::PRIMARY_CLASS, $navigation->getAttribute(Html5::ATTR_CLASS));
     }
 
     public function testDecoratePrimaryNavigationWithGeneralItem()

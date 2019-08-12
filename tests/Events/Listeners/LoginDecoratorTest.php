@@ -21,7 +21,7 @@ class LoginDecoratorTest extends TestCase
     const HEADER = 'foo';
     const FOOTER = 'bar';
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->assetManagerMock = $this->getMockBuilder(AssetManager::class)
             ->disableOriginalConstructor()

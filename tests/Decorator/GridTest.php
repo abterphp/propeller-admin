@@ -22,7 +22,7 @@ class GridTest extends TestCase
     /** @var Grid - System Under Test */
     protected $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->sut = (new Grid())->init();
 
@@ -59,8 +59,8 @@ class GridTest extends TestCase
 
         $this->sut->decorate($nodes);
 
-        $this->assertContains(Grid::FILTER_INPUT_CLASS, $nodes[0]->getAttribute(Html5::ATTR_CLASS));
-        $this->assertContains(Grid::FILTER_INPUT_CLASS, $nodes[1]->getAttribute(Html5::ATTR_CLASS));
+        $this->assertStringContainsString(Grid::FILTER_INPUT_CLASS, $nodes[0]->getAttribute(Html5::ATTR_CLASS));
+        $this->assertStringContainsString(Grid::FILTER_INPUT_CLASS, $nodes[1]->getAttribute(Html5::ATTR_CLASS));
     }
 
     public function testDecoratePaginations()
@@ -95,8 +95,8 @@ class GridTest extends TestCase
 
         $this->sut->decorate($nodes);
 
-        $this->assertContains(Grid::HELP_BLOCK_CLASS, $input->getAttribute(Html5::ATTR_CLASS));
-        $this->assertContains(Grid::HELP_BLOCK_CLASS, $label->getAttribute(Html5::ATTR_CLASS));
-        $this->assertContains(Grid::HELP_BLOCK_CLASS, $component->getAttribute(Html5::ATTR_CLASS));
+        $this->assertStringContainsString(Grid::HELP_BLOCK_CLASS, $input->getAttribute(Html5::ATTR_CLASS));
+        $this->assertStringContainsString(Grid::HELP_BLOCK_CLASS, $label->getAttribute(Html5::ATTR_CLASS));
+        $this->assertStringContainsString(Grid::HELP_BLOCK_CLASS, $component->getAttribute(Html5::ATTR_CLASS));
     }
 }

@@ -17,7 +17,7 @@ class HeaderTest extends TestCase
     /** @var Button|MockObject */
     protected $brandBtnMock;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->brandBtnMock = $this->getMockBuilder(Button::class)
             ->disableOriginalConstructor()
@@ -35,7 +35,7 @@ class HeaderTest extends TestCase
 
         $this->brandBtnMock->expects($this->atLeastOnce())->method('__toString')->willReturn($brandBtnRendered);
 
-        $this->assertContains($brandBtnRendered, (string)$this->sut);
+        $this->assertStringContainsString($brandBtnRendered, (string)$this->sut);
     }
 
     public function testRenderContainsHamburgerButton()
@@ -54,7 +54,7 @@ class HeaderTest extends TestCase
         $this->brandBtnMock->expects($this->atLeastOnce())->method('__toString')->willReturn($brandBtnRendered);
         $hamburgerBtnMock->expects($this->atLeastOnce())->method('__toString')->willReturn($brandBtnRendered);
 
-        $this->assertContains($hamburgerBtnRendered, (string)$this->sut);
+        $this->assertStringContainsString($hamburgerBtnRendered, (string)$this->sut);
     }
 
     public function testGetExtended()

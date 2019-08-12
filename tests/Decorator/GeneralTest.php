@@ -13,7 +13,7 @@ class GeneralTest extends TestCase
     /** @var General - System Under Test */
     protected $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->sut = (new General())->init();
 
@@ -43,10 +43,10 @@ class GeneralTest extends TestCase
         $this->sut->decorate([$component1, $component2, $component3]);
 
         $this->assertTrue($component1->hasAttribute(Html5::ATTR_CLASS));
-        $this->assertContains(Component::CLASS_HIDDEN, $component1->getAttribute(Html5::ATTR_CLASS));
+        $this->assertStringContainsString(Component::CLASS_HIDDEN, $component1->getAttribute(Html5::ATTR_CLASS));
         $this->assertFalse($component2->hasAttribute(Html5::ATTR_CLASS));
         $this->assertTrue($component3->hasAttribute(Html5::ATTR_CLASS));
-        $this->assertContains(Component::CLASS_HIDDEN, $component3->getAttribute(Html5::ATTR_CLASS));
+        $this->assertStringContainsString(Component::CLASS_HIDDEN, $component3->getAttribute(Html5::ATTR_CLASS));
     }
 
     public function testDecorateButtons()
@@ -58,10 +58,10 @@ class GeneralTest extends TestCase
         $this->sut->decorate([$component1, $component2, $component3]);
 
         $this->assertTrue($component1->hasAttribute(Html5::ATTR_CLASS));
-        $this->assertContains(General::BUTTON_CLASS, $component1->getAttribute(Html5::ATTR_CLASS));
+        $this->assertStringContainsString(General::BUTTON_CLASS, $component1->getAttribute(Html5::ATTR_CLASS));
         $this->assertFalse($component2->hasAttribute(Html5::ATTR_CLASS));
         $this->assertTrue($component3->hasAttribute(Html5::ATTR_CLASS));
-        $this->assertContains(General::BUTTON_CLASS, $component3->getAttribute(Html5::ATTR_CLASS));
+        $this->assertStringContainsString(General::BUTTON_CLASS, $component3->getAttribute(Html5::ATTR_CLASS));
     }
 
     public function testDecorateButtonsWithDoubleInit()

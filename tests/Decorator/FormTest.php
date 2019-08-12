@@ -21,7 +21,7 @@ class FormTest extends TestCase
     /** @var Form - System Under Test */
     protected $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->sut = (new Form())->init();
 
@@ -58,8 +58,8 @@ class FormTest extends TestCase
 
         $this->sut->decorate($nodes);
 
-        $this->assertContains(Form::DEFAULT_LABEL_CLASS, $nodes[0]->getAttribute(Html5::ATTR_CLASS));
-        $this->assertContains(Form::DEFAULT_LABEL_CLASS, $nodes[1]->getAttribute(Html5::ATTR_CLASS));
+        $this->assertStringContainsString(Form::DEFAULT_LABEL_CLASS, $nodes[0]->getAttribute(Html5::ATTR_CLASS));
+        $this->assertStringContainsString(Form::DEFAULT_LABEL_CLASS, $nodes[1]->getAttribute(Html5::ATTR_CLASS));
     }
 
     public function testDecorateInputs()
@@ -69,9 +69,9 @@ class FormTest extends TestCase
 
         $this->sut->decorate($nodes);
 
-        $this->assertContains(Form::DEFAULT_INPUT_CLASS, $nodes[0]->getAttribute(Html5::ATTR_CLASS));
-        $this->assertContains(Form::DEFAULT_INPUT_CLASS, $nodes[1]->getAttribute(Html5::ATTR_CLASS));
-        $this->assertContains(Form::DEFAULT_INPUT_CLASS, $nodes[2]->getAttribute(Html5::ATTR_CLASS));
+        $this->assertStringContainsString(Form::DEFAULT_INPUT_CLASS, $nodes[0]->getAttribute(Html5::ATTR_CLASS));
+        $this->assertStringContainsString(Form::DEFAULT_INPUT_CLASS, $nodes[1]->getAttribute(Html5::ATTR_CLASS));
+        $this->assertStringContainsString(Form::DEFAULT_INPUT_CLASS, $nodes[2]->getAttribute(Html5::ATTR_CLASS));
     }
 
     public function testDecorateFormGroups()
@@ -84,8 +84,8 @@ class FormTest extends TestCase
 
         $this->sut->decorate($nodes);
 
-        $this->assertContains(Form::DEFAULT_FORM_GROUP_CLASS, $nodes[0]->getAttribute(Html5::ATTR_CLASS));
-        $this->assertContains(Form::DEFAULT_FORM_GROUP_CLASS, $nodes[1]->getAttribute(Html5::ATTR_CLASS));
+        $this->assertStringContainsString(Form::DEFAULT_FORM_GROUP_CLASS, $nodes[0]->getAttribute(Html5::ATTR_CLASS));
+        $this->assertStringContainsString(Form::DEFAULT_FORM_GROUP_CLASS, $nodes[1]->getAttribute(Html5::ATTR_CLASS));
     }
 
     public function testDecorateButtons()
@@ -95,8 +95,8 @@ class FormTest extends TestCase
 
         $this->sut->decorate($nodes);
 
-        $this->assertContains(Form::DEFAULT_BUTTON_CLASS, $nodes[0]->getAttribute(Html5::ATTR_CLASS));
-        $this->assertContains(Form::DEFAULT_BUTTON_CLASS, $nodes[1]->getAttribute(Html5::ATTR_CLASS));
+        $this->assertStringContainsString(Form::DEFAULT_BUTTON_CLASS, $nodes[0]->getAttribute(Html5::ATTR_CLASS));
+        $this->assertStringContainsString(Form::DEFAULT_BUTTON_CLASS, $nodes[1]->getAttribute(Html5::ATTR_CLASS));
     }
 
     public function testDecorateCheckboxGroups()
@@ -109,7 +109,7 @@ class FormTest extends TestCase
 
         $this->sut->decorate($nodes);
 
-        $this->assertContains(Form::CHECKBOX_GROUP_CLASS, $nodes[0]->getAttribute(Html5::ATTR_CLASS));
-        $this->assertContains(Form::CHECKBOX_GROUP_CLASS, $nodes[1]->getAttribute(Html5::ATTR_CLASS));
+        $this->assertStringContainsString(Form::CHECKBOX_GROUP_CLASS, $nodes[0]->getAttribute(Html5::ATTR_CLASS));
+        $this->assertStringContainsString(Form::CHECKBOX_GROUP_CLASS, $nodes[1]->getAttribute(Html5::ATTR_CLASS));
     }
 }
