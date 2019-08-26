@@ -13,7 +13,7 @@ use AbterPhp\Framework\Navigation\Dropdown;
 use AbterPhp\Framework\Navigation\Item;
 use AbterPhp\Framework\Navigation\Navigation;
 use AbterPhp\Framework\Navigation\UserBlock;
-use AbterPhp\Framework\Session\MockSessionFactory;
+use AbterPhp\Framework\TestDouble\Session\MockSessionFactory;
 use Opulence\Routing\Urls\UrlGenerator;
 use Opulence\Sessions\ISession;
 use PHPUnit\Framework\MockObject\MockObject;
