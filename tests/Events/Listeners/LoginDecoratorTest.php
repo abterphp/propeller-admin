@@ -12,14 +12,14 @@ use PHPUnit\Framework\TestCase;
 
 class LoginDecoratorTest extends TestCase
 {
+    public const HEADER = 'foo';
+    public const FOOTER = 'bar';
+
     /** @var LoginDecorator - System Under Test */
     protected $sut;
 
     /** @var AssetManager|MockObject */
     protected $assetManagerMock;
-
-    const HEADER = 'foo';
-    const FOOTER = 'bar';
 
     public function setUp(): void
     {
