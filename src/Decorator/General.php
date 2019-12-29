@@ -22,9 +22,24 @@ class General extends Decorator
         Button::INTENT_INFO      => ['btn-info'],
         Button::INTENT_WARNING   => ['btn-warning'],
         Button::INTENT_LINK      => ['btn-link'],
-        Button::INTENT_SMALL     => ['btn-sm'],
-        Button::INTENT_LARGE     => ['btn-lg'],
         Button::INTENT_DEFAULT   => ['btn-default'],
+
+        Button::INTENT_SMALL => ['btn-sm'],
+        Button::INTENT_LARGE => ['btn-lg'],
+
+        Button::INTENT_FAB     => ['pmd-btn-fab'],
+        Button::INTENT_FLAT    => ['pmd-btn-flat'],
+        Button::INTENT_RAISED  => ['pmd-btn-raised'],
+        Button::INTENT_OUTLINE => ['pmd-btn-outline'],
+        Button::INTENT_RIPPLE  => ['pmd-ripple-effect '],
+    ];
+
+    /** @var array */
+    protected $componentMap = [
+        Component::INTENT_HIDDEN   => [Component::CLASS_HIDDEN],
+        Component::INTENT_ICON   => ['material-icons'],
+        Component::INTENT_SMALL => ['pmd-sm'],
+        Component::INTENT_LARGE => ['pmd-lg'],
     ];
 
     protected $initialized = false;
@@ -40,8 +55,8 @@ class General extends Decorator
 
         $this->initialized = true;
 
-        // Add the class "hidden" to all hidden elements
-        $this->rules[] = new Rule([Component::INTENT_HIDDEN], null, [Component::CLASS_HIDDEN]);
+        // Add the appropriate class to components
+        $this->rules[] = new Rule([], null, [], $this->componentMap);
 
         // Add the appropriate class to buttons
         $this->rules[] = new Rule([], Button::class, [static::BUTTON_CLASS], $this->buttonIntentMap);
