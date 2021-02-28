@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace AbterPhp\PropellerAdmin\Decorator\Navigation;
 
-use AbterPhp\Admin\Constant\Routes;
+use AbterPhp\Admin\Constant\Route;
 use AbterPhp\Framework\Constant\Html5;
 use AbterPhp\Framework\Decorator\Decorator;
 use AbterPhp\Framework\Decorator\Rule;
@@ -62,7 +62,7 @@ class Navbar extends Decorator
         $navigation->setWrapper(new Component('', [], $wrapperAttribs, Html5::TAG_NAV));
 
         // Add header
-        $dashboardUrl = $this->urlGenerator->createFromName(Routes::ROUTE_DASHBOARD);
+        $dashboardUrl = $this->urlGenerator->createFromName(Route::DASHBOARD_VIEW);
         $header       = new Header(new Button(null, [], [Html5::ATTR_HREF => $dashboardUrl], Html5::TAG_A));
         $navigation->addItem($header, static::HEADER_WEIGHT);
     }

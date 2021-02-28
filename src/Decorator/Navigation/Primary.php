@@ -167,6 +167,8 @@ class Primary extends Decorator
     }
 
     /**
+     * @suppress PhanUndeclaredMethod
+     *
      * @param UserBlock $userBlock
      */
     protected function decorateUserBlock(UserBlock $userBlock)
