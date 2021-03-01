@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "abterphp/admin",
-            "version": "dev-master",
+            "version": "dev-main",
             "source": {
                 "type": "git",
                 "url": "https://github.com/abterphp/admin.git",
-                "reference": "7ada397848d1dd3db9fcf9657ec68a23513a4b7e"
+                "reference": "8e3d822933f21b9fc2e383f9d3fb859599a7323f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/abterphp/admin/zipball/7ada397848d1dd3db9fcf9657ec68a23513a4b7e",
-                "reference": "7ada397848d1dd3db9fcf9657ec68a23513a4b7e",
+                "url": "https://api.github.com/repos/abterphp/admin/zipball/8e3d822933f21b9fc2e383f9d3fb859599a7323f",
+                "reference": "8e3d822933f21b9fc2e383f9d3fb859599a7323f",
                 "shasum": ""
             },
             "require": {
@@ -54,22 +54,22 @@
             "description": "Admin module for AbterPHP",
             "support": {
                 "issues": "https://github.com/abterphp/admin/issues",
-                "source": "https://github.com/abterphp/admin/tree/master"
+                "source": "https://github.com/abterphp/admin/tree/main"
             },
-            "time": "2021-02-28T12:32:37+00:00"
+            "time": "2021-02-28T23:57:39+00:00"
         },
         {
             "name": "abterphp/framework",
-            "version": "dev-master",
+            "version": "dev-main",
             "source": {
                 "type": "git",
                 "url": "https://github.com/abterphp/framework.git",
-                "reference": "1850280d1fd9163c251383da795e7c384ac66aaf"
+                "reference": "6e94c024e5156c7a8faf5c7f5662cff764aac21f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/abterphp/framework/zipball/1850280d1fd9163c251383da795e7c384ac66aaf",
-                "reference": "1850280d1fd9163c251383da795e7c384ac66aaf",
+                "url": "https://api.github.com/repos/abterphp/framework/zipball/6e94c024e5156c7a8faf5c7f5662cff764aac21f",
+                "reference": "6e94c024e5156c7a8faf5c7f5662cff764aac21f",
                 "shasum": ""
             },
             "require": {
@@ -132,9 +132,9 @@
             "description": "Foundations for AbterPHP",
             "support": {
                 "issues": "https://github.com/abterphp/framework/issues",
-                "source": "https://github.com/abterphp/framework/tree/master"
+                "source": "https://github.com/abterphp/framework/tree/main"
             },
-            "time": "2021-02-28T14:03:50+00:00"
+            "time": "2021-02-28T23:50:31+00:00"
         },
         {
             "name": "bjeavons/zxcvbn-php",
